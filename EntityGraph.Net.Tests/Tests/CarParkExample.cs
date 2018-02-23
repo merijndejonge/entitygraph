@@ -140,6 +140,7 @@ namespace OpenSoftware.EntityGraph.Net.Tests.Tests
                 new Door(),
                 new Door(),
                 new Door(),
+                new Door(),
                 new Door()
             };
             Engine = new Engine {EngineType = EngineType.Benzin};
@@ -342,6 +343,15 @@ namespace OpenSoftware.EntityGraph.Net.Tests.Tests
             truck2.Trailer = trailer;
             Assert.IsTrue(gr.Validator.Entity(truck1).HasErrors);
             Assert.IsTrue(gr.Validator.Entity(truck2).HasErrors);
+        }
+        [TestMethod]
+        public void PersonCarHasFiveDoorsTest()
+        {
+            var personCar = new PersonCar();
+            var gr = personCar.EntityGraph(CarPark.Shape);
+
+            var doorCount = gr.OfType<Door>().Count();
+            Assert.IsTrue(doorCount == 5);
         }
     }
 }
