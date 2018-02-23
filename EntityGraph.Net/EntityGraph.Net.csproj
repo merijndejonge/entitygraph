@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>OpenSoftware.EntityGraph.Net</AssemblyName>
+    <RootNamespace>OpenSoftware.EntityGraph.Net</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EntityGraphCore\EntityGraphCore.csproj" />
+  </ItemGroup>
+
+</Project>
